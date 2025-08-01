@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular Interactiva</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
 
+    <header>
+        <h1>Malla Curricular Interactiva</h1>
+        <p>Comercio Exterior</p>
+    </header>
+
+    <main id="malla-curricular">
+        <div class="semestre">
+            <h2>Semestre 1</h2>
+            <div class="ramo" id="software-gestion-datos">Software de gestión de datos</div>
+            <div class="ramo" id="economia">Economía</div>
+            <div class="ramo" id="administracion-comercio-exterior">Administración para el comercio exterior</div>
+            <div class="ramo" id="contabilidad-costos">Contabilidad y costos en comercio exterior</div>
+            <div class="ramo" id="formacion-ciudadana">Formación ciudadana</div>
+            <div class="ramo" id="resolucion-problemas-algebra">Resolución de problemas en algebra</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 2</h2>
+            <div class="ramo" id="tramitacion-bancaria">Tramitación bancaria y financiera</div>
+            <div class="ramo" id="fundamentos-comercio-exterior">Fundamentos de comercio exterior</div>
+            <div class="ramo" id="legislacion-aduanera">Legislación y operaciones aduaneras de bienes y servicios</div>
+            <div class="ramo" id="clasificacion-arancelaria">Clasificación arancelaria y merceología aplicada</div>
+            <div class="ramo" id="valoracion-tributacion-aduanera">Valoración y tributación aduanera</div>
+            <div class="ramo" id="funciones-progresiones" data-requisitos="resolucion-problemas-algebra">Funciones y progresiones</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 3</h2>
+            <div class="ramo" id="estadistica" data-requisitos="resolucion-problemas-algebra">Estadística</div>
+            <div class="ramo" id="logistica-internacional">Logística internacional</div>
+            <div class="ramo" id="redes-suministros-globales">Redes de suministros globales</div>
+            <div class="ramo" id="multiculturalidad-negocios">Multiculturalidad en negocios globales</div>
+            <div class="ramo" id="software-gestion-aduanera" data-requisitos="valoracion-tributacion-aduanera">Software de gestión aduanera</div>
+            <div class="ramo" id="marketing-comercio-exterior">Marketing para comercio exterior</div>
+            <div class="ramo" id="creacion-empresas">Creación de empresas</div>
+        </div>
+
+        <div class="semestre">
+            <h2>Semestre 4</h2>
+            <div class="ramo" id="electivo-1">Electivo de tendencias del sector productivo y de servicios I</div>
+            <div class="ramo" id="electivo-2">Electivo de tendencias del sector productivo y de servicios II</div>
+            <div class="ramo" id="metrologia-aplicada" data-requisitos="logistica-internacional">Metrología aplicada a la logística</div>
+            <div class="ramo" id="seguros-internacionales">Seguros internacionales en redes de suministros</div>
+            <div class="ramo" id="proyecto-integrado" data-requisitos="tramitacion-bancaria,marketing-comercio-exterior">Proyecto integrado</div>
+            <div class="ramo" id="ingles-inicial">Ingles inicial</div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
