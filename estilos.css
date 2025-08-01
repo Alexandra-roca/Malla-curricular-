@@ -1,1 +1,129 @@
+/* Estilos generales y paleta de colores */
+:root {
+    --color-fondo: #FFF0F5; /* Rosa muy pálido (Lavender Blush) */
+    --color-ramo: #FFFFFF;
+    --color-ramo-aprobado: #F8C8DC; /* Rosa pastel */
+    --color-ramo-bloqueado: #EAEAEA;
+    --color-texto-principal: #333333;
+    --color-texto-aprobado: #965c72;
+    --color-borde: #FBC4D6; /* Rosa más intenso para bordes */
+    --sombra-caja: 0 4px 15px rgba(0, 0, 0, 0.05);
+    --fuente-principal: 'Poppins', sans-serif;
+}
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    background-color: var(--color-fondo);
+    color: var(--color-texto-principal);
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: white;
+    border-bottom: 2px solid var(--color-borde);
+}
+
+header h1 {
+    font-weight: 600;
+    color: var(--color-texto-aprobado);
+}
+
+header p {
+    font-weight: 300;
+    font-size: 1.1rem;
+    color: #888;
+}
+
+#malla-curricular {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+    gap: 1.5rem; /* Espacio entre columnas de semestres */
+    flex-wrap: wrap; /* Permite que los semestres pasen a la siguiente línea en pantallas pequeñas */
+}
+
+.semestre {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: var(--sombra-caja);
+    min-width: 280px; /* Ancho mínimo para cada semestre */
+    flex: 1; /* Permite que crezcan para ocupar el espacio */
+    max-width: 320px;
+    border: 1px solid var(--color-borde);
+}
+
+.semestre h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    color: var(--color-texto-aprobado);
+    border-bottom: 1px solid var(--color-borde);
+    padding-bottom: 0.5rem;
+}
+
+.ramo {
+    background-color: var(--color-ramo);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--color-borde);
+    box-shadow: var(--sombra-caja);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.ramo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* --- ESTADOS DE LOS RAMOS --- */
+
+/* Estilo para un ramo aprobado */
+.ramo.aprobado {
+    background-color: var(--color-ramo-aprobado);
+    color: var(--color-texto-aprobado);
+    border-left-color: var(--color-texto-aprobado);
+    text-decoration: line-through;
+    opacity: 0.8;
+}
+
+/* Estilo para un ramo bloqueado (requisitos no cumplidos) */
+.ramo.bloqueado {
+    background-color: var(--color-ramo-bloqueado);
+    color: #999;
+    border-left-color: #ccc;
+    cursor: not-allowed !important; /* Sobrescribe el cursor pointer */
+}
+
+.ramo.bloqueado:hover {
+    transform: none; /* No hay efecto hover en ramos bloqueados */
+    box-shadow: var(--sombra-caja);
+}
+
+
+/* --- DISEÑO RESPONSIVO --- */
+
+/* Para pantallas más pequeñas como tablets y móviles */
+@media (max-width: 768px) {
+    #malla-curricular {
+        flex-direction: column; /* Apila los semestres verticalmente */
+        align-items: center; /* Centra las columnas */
+        padding: 1rem;
+    }
+    .semestre {
+      width: 100%;
+      max-width: 500px; /* Limita el ancho máximo en vista de columna */
+    }
+}
